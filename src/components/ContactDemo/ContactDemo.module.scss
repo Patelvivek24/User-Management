@@ -1,181 +1,183 @@
 .section {
-  padding: 6rem 0;
-  background: white;
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #0A0F1C, #111827, #0A0F1C);
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  filter: blur(150px);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #FF8A2A, #7A3FF0, transparent 70%);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+.ctaCardWrapper {
+  position: relative;
+  margin-bottom: 4rem;
 }
 
-.leftColumn {
-  h2 {
-    margin: 0;
+.outerGlow {
+  position: absolute;
+  inset: -1rem;
+  border-radius: 3rem;
+  background: linear-gradient(90deg, #0EEAFF, #7A3FF0, #FF8A2A);
+  opacity: 0.3;
+  filter: blur(3rem);
+  z-index: 1;
+}
+
+.ctaCard {
+  position: relative;
+  border-radius: 3rem;
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(14, 234, 255, 0.3);
+  padding: 3rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(circle, #0EEAFF 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.corner {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.top-left { top: 0; left: 0; border-radius: 3rem 0 100% 0; }
+.top-right { top: 0; right: 0; border-radius: 0 3rem 0 100%; }
+.bottom-left { bottom: 0; left: 0; border-radius: 100% 0 0 3rem; }
+.bottom-right { bottom: 0; right: 0; border-radius: 0 100% 3rem 0; }
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.badgeWrapper { display: flex; justify-content: center; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 138, 42, 0.3);
+  color: #FF8A2A;
+}
+
+.headline h2 {
+  font-size: 2.5rem;
+  color: #E5E7EB;
+  margin-bottom: 1rem;
+  span {
+    background: linear-gradient(90deg, #0EEAFF, #7A3FF0, #FF8A2A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
-.title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 1.5rem;
+.headline p {
+  font-size: 1.2rem;
+  color: #D1D5DB;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.subtitle {
-  font-size: 18px;
-  color: #4a5568;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-}
-
-.contactInfo {
+.featuresRow {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.contactItem {
-  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  align-items: flex-start;
+  padding: 1.5rem 0;
 }
 
-.contactIcon {
-  font-size: 32px;
-  width: 60px;
-  height: 60px;
+.featureItem {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-
-.contactItem h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1a202c;
-  margin: 0 0 0.25rem 0;
-}
-
-.contactItem p {
-  color: #4a5568;
-  margin: 0;
-}
-
-.rightColumn {
-  background: #f7fafc;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
-
-  label {
-    font-weight: 600;
-    color: #1a202c;
-    font-size: 15px;
-  }
-
-  input,
-  textarea {
-    padding: 0.875rem 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-    background: white;
-
-    &:focus {
-      outline: none;
-      border-color: #667eea;
-    }
-
-    &::placeholder {
-      color: #a0aec0;
-    }
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid;
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.05);
 }
 
-.submitButton {
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  position: relative;
+  padding: 1.5rem 3rem;
+  border-radius: 2rem;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  background: linear-gradient(90deg, #FF8A2A, #FF6A0A);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.secondaryButton {
+  padding: 1.5rem 3rem;
+  border-radius: 2rem;
+  border: 2px solid #0EEAFF;
+  color: #0EEAFF;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  font-weight: 500;
+}
+
+.trustLine {
+  font-size: 1rem;
+  color: #9CA3AF;
+}
+
+.infoCardsRow {
+  margin-top: 3rem;
+}
+
+.infoCard {
+  padding: 2rem;
+  border-radius: 2rem;
+  background: rgba(17,24,39,0.7);
+  border: 1px solid rgba(14,234,255,0.1);
+  text-align: center;
   transition: all 0.3s ease;
-  margin-top: 0.5rem;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-@media (max-width: 968px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .rightColumn {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
-  .contactItem {
-    gap: 1rem;
-  }
-
-  .contactIcon {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-  }
-}
-
+.infoCard h4 { color: #E5E7EB; }
+.infoCard p { color: #9CA3AF; }
+.infoCard a { font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
