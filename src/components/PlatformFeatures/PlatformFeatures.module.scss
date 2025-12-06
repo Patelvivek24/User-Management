@@ -1,93 +1,197 @@
-.section {
-  padding: 6rem 0;
-  background: white;
+.featuresSection {
+  position: relative;
+  padding: 120px 0;
+  background: #0a0f1c;
+  overflow: hidden;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* Animated grid background */
+.backgroundGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: linear-gradient(#0eeaff 1px, transparent 1px),
+    linear-gradient(90deg, #0eeaff 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: moveGrid 30s linear infinite;
 }
 
+@keyframes moveGrid {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+/* Header */
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 90px;
+}
+
+.sectionBadgeWrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+.badgeGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  background: linear-gradient(to right, #0eeaff, #7a3ff0);
+  filter: blur(25px);
+  opacity: 0.6;
+}
+
+.sectionBadge {
+  position: relative;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(14, 234, 255, 0.3);
+
+  span {
+    color: #0eeaff;
+    font-weight: 500;
+  }
+
+  .badgeIcon {
+    color: #0eeaff;
+  }
 }
 
 .title {
+  margin-top: 24px;
   font-size: 40px;
   font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 1rem;
+  color: #e5e7eb;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #0eeaff, #7a3ff0);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .subtitle {
+  margin-top: 16px;
   font-size: 20px;
-  color: #4a5568;
-  max-width: 600px;
-  margin: 0 auto;
+  color: #9ca3af;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* Feature Cards */
+.featureCardWrapper {
+  position: relative;
+}
+
+.featureGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  filter: blur(30px);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.featureCardWrapper:hover .featureGlow {
+  opacity: 0.3;
 }
 
 .featureCard {
-  background: #f7fafc;
-  padding: 2.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  position: relative;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(14, 234, 255, 0.1);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
 
-  &:hover {
-    background: white;
-    border-color: #667eea;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-  }
+.featureCard:hover {
+  border-color: rgba(14, 234, 255, 0.3);
+}
 
-  .icon {
-    font-size: 48px;
-    margin-bottom: 1.5rem;
-    display: block;
-  }
+.featureAccent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 220px;
+  opacity: 0.1;
+  transition: opacity 0.4s;
+}
 
-  .featureTitle {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1a202c;
-    margin-bottom: 1rem;
-  }
+.featureCard:hover .featureAccent {
+  opacity: 0.2;
+}
 
-  .featureDescription {
-    color: #4a5568;
-    line-height: 1.7;
-    margin: 0;
+.featureIconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.featureIconBlur {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  filter: blur(18px);
+  opacity: 0.5;
+}
+
+.featureIcon {
+  position: relative;
+  z-index: 2;
+}
+
+.featureTitle {
+  font-size: 24px;
+  color: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.featureDescription {
+  font-size: 16px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.highlights {
+  margin-top: 15px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+
+  span {
+    color: #d1d5db;
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .featureCard {
-    padding: 2rem;
-  }
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
 }
-
