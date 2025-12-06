@@ -17,6 +17,7 @@
   transform: translateX(-50%);
   background-color: #7A3FF0;
   z-index: 0;
+  pointer-events: none;
 }
 
 
@@ -128,6 +129,8 @@
 
 .linkCol {
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
   
   @media (min-width: 992px) {
     margin-bottom: 0;
@@ -164,6 +167,9 @@
   gap: 8px;
   transition: color 0.3s;
   font-size: 15px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .linkItem:hover {
@@ -176,12 +182,14 @@
   background-color: #0EEAFF;
   border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
   flex-shrink: 0;
+  pointer-events: none;
 }
 
 .linkItem:hover .dot {
   opacity: 1;
+  transform: translateX(5px);
 }
 
 .bottomBar {

@@ -115,7 +115,7 @@ export default function Footer() {
                     transition={{ delay: index * 0.1 + linkIndex * 0.05 }}
                   >
                     <Link href={getLinkHref(link)} className={styles.linkItem}>
-                      <motion.span className={styles.dot} whileHover={{ x: 5 }} />
+                      <span className={styles.dot} />
                       {link}
                     </Link>
                   </motion.li>
