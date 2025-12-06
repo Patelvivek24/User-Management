@@ -74,10 +74,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.75rem 1.5rem;
+  gap: 10px;
+  padding: 12px 24px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #7a3ff0;
   background: rgba(17, 24, 39, 0.8);
   backdrop-filter: blur(8px);
@@ -105,7 +105,7 @@
 .subtitle {
   max-width: 760px;
   margin: 0 auto;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 1.7;
   color: #9ca3af;
 }
@@ -138,22 +138,26 @@
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 48px;
 }
 
 .step {
   position: relative;
   display: flex;
-  gap: 2rem;
+  gap: 32px;
   align-items: center;
+  width: 100%;
+  min-height: 200px;
 }
 
 .left {
   flex-direction: row;
+  justify-content: flex-start;
 }
 
 .right {
   flex-direction: row-reverse;
+  // justify-content: flex-end;
 }
 
 /* ================================
@@ -162,7 +166,9 @@
 
 .card {
   position: relative;
-  flex: 1;
+  width: 50%;
+  max-width: 50%;
+  flex: 0 0 50%;
 }
 
 .cardGlow {
@@ -180,7 +186,7 @@
 
 .cardInner {
   position: relative;
-  padding: 2rem;
+  padding: 32px;
   border-radius: 24px;
   background: rgba(17, 24, 39, 0.75);
   backdrop-filter: blur(12px);
@@ -198,8 +204,6 @@
 
 .stepBadge {
   position: absolute;
-  top: -20px;
-  right: -20px;
   width: 64px;
   height: 64px;
   display: flex;
@@ -207,10 +211,21 @@
   justify-content: center;
   border-radius: 18px;
   border: 2px solid;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
   backdrop-filter: blur(6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.left .stepBadge {
+  top: -20px;
+  right: -20px;
+}
+
+.right .stepBadge {
+  top: -20px;
+  left: -20px;
 }
 
 /* ================================
@@ -224,7 +239,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 /* ================================
@@ -232,14 +247,14 @@
 ================================ */
 
 .stepTitle {
-  font-size: 1.4rem;
+  font-size: 22px;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
   color: #e5e7eb;
 }
 
 .stepDesc {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.7;
   color: #9ca3af;
 }
@@ -264,7 +279,7 @@
 
 .centerDot {
   position: absolute;
-  left: 50%;
+  left: 49%;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -290,8 +305,8 @@
 
 .ctaButton {
   position: relative;
-  padding: 1.25rem 2.5rem;
-  font-size: 1rem;
+  padding: 20px 40px;
+  font-size: 16px;
   font-weight: 500;
   border-radius: 14px;
   border: none;
@@ -299,6 +314,7 @@
   overflow: hidden;
   color: #fff;
   background: linear-gradient(90deg, #ff8a2a, #ff6a0a);
+  transition: transform 0.3s ease;
 }
 
 .ctaButtonAnim {
@@ -318,7 +334,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   z-index: 1;
 }
 
@@ -346,6 +362,14 @@
 ================================ */
 
 @media (max-width: 992px) {
+  .section {
+    padding: 6rem 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 4rem;
+  }
+
   .centerLine,
   .centerDot {
     display: none;
@@ -353,5 +377,63 @@
 
   .step {
     flex-direction: column !important;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .left .stepBadge,
+  .right .stepBadge {
+    top: -20px;
+    right: -20px;
+    left: auto;
+  }
+
+  .steps {
+    gap: 3rem;
+  }
+
+  .ctaWrapper {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .cardInner {
+    padding: 24px;
+  }
+
+  .stepTitle {
+    font-size: 20px;
+  }
+
+  .stepDesc {
+    font-size: 15px;
+  }
+
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 15px;
+  }
+
+  .steps {
+    gap: 2.5rem;
   }
 }
