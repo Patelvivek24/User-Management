@@ -1,8 +1,54 @@
 :root {
+  /* Background Colors */
   --background: #ffffff;
   --foreground: #171717;
+  --bg-dark: #0a0f1c;
+  --bg-dark-secondary: rgba(17, 24, 39, 0.95);
+  --bg-dark-tertiary: rgba(17, 24, 39, 0.8);
+  --bg-dark-quaternary: rgba(17, 24, 39, 0.6);
+  --bg-dark-quinary: rgba(17, 24, 39, 0.4);
+  --bg-transparent: transparent;
+
+  /* Primary Colors */
+  --color-primary-orange: #ff8a2a;
+  --color-primary-orange-dark: #ff6a0a;
+  --color-primary-purple: #7a3ff0;
+  --color-primary-cyan: #0eeaff;
+
+  /* Text Colors */
+  --text-primary: #e5e7eb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-white: #ffffff;
+  --text-cyan: #0eeaff;
+
+  /* Border Colors */
+  --border-cyan-light: rgba(14, 234, 255, 0.05);
+  --border-cyan-medium: rgba(14, 234, 255, 0.2);
+  --border-cyan-strong: rgba(14, 234, 255, 0.3);
+
+  /* Background Overlays */
+  --overlay-cyan-light: rgba(14, 234, 255, 0.1);
+  --overlay-cyan-medium: rgba(14, 234, 255, 0.2);
+  --overlay-cyan-strong: rgba(14, 234, 255, 0.3);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-orange), var(--color-primary-purple));
+  --gradient-primary-horizontal: linear-gradient(to right, var(--color-primary-orange), var(--color-primary-purple));
+  --gradient-cyan-purple: linear-gradient(to right, var(--color-primary-cyan), var(--color-primary-purple));
+  --gradient-triple: linear-gradient(to right, var(--color-primary-orange), var(--color-primary-purple), var(--color-primary-cyan));
+  --gradient-orange-dark: linear-gradient(to right, var(--color-primary-orange), var(--color-primary-orange-dark));
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 @media (prefers-color-scheme: dark) {

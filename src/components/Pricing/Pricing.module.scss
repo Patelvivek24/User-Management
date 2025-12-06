@@ -15,14 +15,14 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 20px;
   color: #4a5568;
   max-width: 600px;
   margin: 0 auto;
@@ -70,7 +70,7 @@
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 14px;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
 }
@@ -81,7 +81,7 @@
 }
 
 .planName {
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 0.5rem;
@@ -89,7 +89,7 @@
 
 .planDescription {
   color: #4a5568;
-  font-size: 0.95rem;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .price {
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -110,7 +110,7 @@
 }
 
 .period {
-  font-size: 1rem;
+  font-size: 16px;
   color: #4a5568;
   margin-left: 0.25rem;
 }
@@ -134,7 +134,7 @@
 .checkmark {
   color: #48bb78;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 20px;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -144,7 +144,7 @@
   padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
@@ -177,11 +177,11 @@
   }
 
   .title {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   .pricingGrid {

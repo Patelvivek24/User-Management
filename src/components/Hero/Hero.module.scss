@@ -1,160 +1,365 @@
-.section {
-  padding: 8rem 0 6rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+/* ============================
+   Global Animations
+============================ */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================
+   Hero Section Wrapper
+============================ */
+.heroSection {
   position: relative;
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.3;
-  }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* ============================
+   Animated Gradient Background
+============================ */
+.gradientBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background: linear-gradient(
+    115deg,
+    var(--bg-dark) 0%,
+    var(--color-primary-purple) 30%,
+    var(--color-primary-cyan) 60%,
+    var(--bg-dark) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* ============================
+   Moving Grid Overlay
+============================ */
+.animatedGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: 
+    linear-gradient(var(--color-primary-cyan) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-primary-cyan) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ============================
+   Floating Orbs
+============================ */
+.orb {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.orbOrange {
+  top: 20%;
+  left: 25%;
+  background: var(--color-primary-orange);
+}
+
+.orbCyan {
+  bottom: 20%;
+  right: 25%;
+  background: var(--color-primary-cyan);
+}
+
+/* ============================
+   Content Wrapper
+============================ */
+.contentWrapper {
   position: relative;
-  z-index: 1;
+  z-index: 10;
+  max-width: 1280px;
+  padding: 60px 24px;
 }
 
-.content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+/* ============================
+   Badge
+============================ */
+.badgeWrapper {
+  position: relative;
+  display: inline-flex;
 }
 
-.title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: white;
+.badgeGlow {
+  position: absolute;
+  inset: 0;
+  filter: blur(20px);
+  background: var(--gradient-cyan-purple);
+  border-radius: 999px;
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
 
-  .highlight {
-    display: block;
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+.badge {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--bg-dark-tertiary);
+  border: 1px solid var(--border-cyan-strong);
+  backdrop-filter: blur(6px);
+  border-radius: 30px;
+  color: var(--text-white);
+
+  span {
+    background: var(--gradient-cyan-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.badgeDot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary-cyan);
+  border-radius: 50%;
 }
 
-.cta {
+/* ============================
+   Headline
+============================ */
+.headlineGroup {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.heroTitle {
+  font-size: 52px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  color: var(--text-primary);
+
+  .gradientText {
+    background: var(--gradient-triple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.heroSubtitle {
+  color: var(--text-secondary);
+  margin-top: 16px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+/* ============================
+   Supporting Text
+============================ */
+.supportingText {
+  margin-top: 15px;
+  color: var(--text-tertiary);
+  font-size: 18px;
+  max-width: 90%;
+  line-height: 1.7;
+}
+
+/* ============================
+   Feature Pills
+============================ */
+.featureList {
+  margin-top: 25px;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 4rem;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
-.primaryButton,
-.secondaryButton {
-  padding: 1rem 2.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.featureChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--bg-dark-quaternary);
+  border: 1px solid var(--border-cyan-medium);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  color: var(--text-secondary);
+}
+
+.featureIcon {
+  color: var(--text-cyan);
+}
+
+/* ============================
+   CTA Buttons
+============================ */
+.ctaGroup {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.startBtn {
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-weight: var(--font-weight-semibold);
   border: none;
-}
+  color: var(--text-white);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-orange-dark);
+  transition: 0.2s ease;
 
-.primaryButton {
-  background: white;
-  color: #667eea;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
   }
 }
 
-.secondaryButton {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-
-  &:hover {
-    background: white;
-    color: #667eea;
-  }
-}
-
-.stats {
+.demoBtn {
+  padding: 14px 32px;
+  border-radius: 14px;
+  background: var(--bg-transparent);
+  color: var(--text-cyan);
+  border: 2px solid var(--color-primary-cyan);
   display: flex;
-  justify-content: center;
-  gap: 4rem;
+  gap: 10px;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  transition: 0.25s ease;
+
+  &:hover {
+    background: var(--overlay-cyan-light);
+  }
+}
+
+/* ============================
+   Stats
+============================ */
+.statsRow {
+  margin-top: 40px;
+  display: flex;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
-.stat {
-  text-align: center;
-}
-
-.statNumber {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: white;
+.statValue {
+  font-size: 32px;
+  background: var(--gradient-cyan-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .statLabel {
-  font-size: 1rem;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: var(--text-tertiary);
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 5rem 0 4rem;
-  }
+/* ============================
+   Right Side Visual Box
+============================ */
+.rightBox {
+  position: relative;
+  margin-top: 40px;
+}
 
-  .title {
-    font-size: 2rem;
-  }
+.floatingIcon {
+  position: absolute;
+  font-size: 40px;
+}
 
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
+/* ============================
+   Flow Diagram
+============================ */
+.flowBox {
+  position: relative;
+  background: var(--bg-dark-quinary);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border-cyan-strong);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 50px var(--overlay-cyan-medium);
+}
 
-  .cta {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+.flowNodeWrapper {
+  margin-bottom: 22px;
+}
 
-  .primaryButton,
-  .secondaryButton {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.875rem 2rem;
-  }
+.flowNode {
+  position: relative;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: 0.25s ease;
 
-  .stats {
-    gap: 2rem;
-  }
-
-  .statNumber {
-    font-size: 2rem;
+  &:hover {
+    transform: translateX(10px);
   }
 }
 
+.flowDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.flowText {
+  display: flex;
+  flex-direction: column;
+
+  div:first-child {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  div:last-child {
+    color: var(--text-tertiary);
+  }
+}
+
+.zapIcon {
+  opacity: 0.5;
+  transition: 0.3s ease;
+
+  .flowNode:hover & {
+    opacity: 1;
+  }
+}
+
+.flowConnector {
+  width: 2px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+/* ============================
+   Pulse Dots
+============================ */
+.pulseOrange {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary-orange);
+  border-radius: 50%;
+}
+
+.pulseCyan {
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary-cyan);
+  border-radius: 50%;
+}

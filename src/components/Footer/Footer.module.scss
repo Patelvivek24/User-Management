@@ -24,7 +24,7 @@
 }
 
 .footerTitle {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -52,7 +52,7 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 20px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -63,7 +63,7 @@
 }
 
 .sectionTitle {
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 600;
   color: white;
   margin-bottom: 1rem;
@@ -82,7 +82,7 @@
       color: #a0aec0;
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: 0.95rem;
+      font-size: 15px;
 
       &:hover {
         color: white;
@@ -100,7 +100,7 @@
 .copyright {
   color: #a0aec0;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 @media (max-width: 968px) {

@@ -23,14 +23,14 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 1.5rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 18px;
   color: #4a5568;
   line-height: 1.7;
   margin-bottom: 3rem;
@@ -49,7 +49,7 @@
 }
 
 .contactIcon {
-  font-size: 2rem;
+  font-size: 32px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -61,7 +61,7 @@
 }
 
 .contactItem h4 {
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 600;
   color: #1a202c;
   margin: 0 0 0.25rem 0;
@@ -93,7 +93,7 @@
   label {
     font-weight: 600;
     color: #1a202c;
-    font-size: 0.95rem;
+    font-size: 15px;
   }
 
   input,
@@ -101,7 +101,7 @@
     padding: 0.875rem 1rem;
     border: 2px solid #e2e8f0;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: inherit;
     transition: border-color 0.3s ease;
     background: white;
@@ -129,7 +129,7 @@
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
@@ -161,11 +161,11 @@
   }
 
   .title {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .contactItem {
@@ -175,7 +175,7 @@
   .contactIcon {
     width: 50px;
     height: 50px;
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 }
 

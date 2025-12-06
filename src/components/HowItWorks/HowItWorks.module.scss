@@ -16,14 +16,14 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 1rem;
   color: white;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 20px;
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
@@ -55,7 +55,7 @@
 }
 
 .stepNumber {
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.3);
   min-width: 80px;
@@ -67,14 +67,14 @@
 }
 
 .stepTitle {
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: white;
 }
 
 .stepDescription {
-  font-size: 1.1rem;
+  font-size: 18px;
   line-height: 1.7;
   opacity: 0.9;
   margin: 0;
@@ -97,7 +97,7 @@
 }
 
 .connectorArrow {
-  font-size: 1.5rem;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -107,11 +107,11 @@
   }
 
   .title {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   .stepCard {
@@ -121,16 +121,16 @@
   }
 
   .stepNumber {
-    font-size: 2rem;
+    font-size: 32px;
     min-width: auto;
   }
 
   .stepTitle {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   .stepDescription {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .connector {
