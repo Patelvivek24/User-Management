@@ -1,0 +1,141 @@
+.section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.stepCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+  }
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+  min-width: 80px;
+  line-height: 1;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.stepDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.connector {
+  position: absolute;
+  left: 2.5rem;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.connectorLine {
+  width: 2px;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.connectorArrow {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .stepCard {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .stepNumber {
+    font-size: 2rem;
+    min-width: auto;
+  }
+
+  .stepTitle {
+    font-size: 1.5rem;
+  }
+
+  .stepDescription {
+    font-size: 1rem;
+  }
+
+  .connector {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
