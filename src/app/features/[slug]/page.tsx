@@ -6,8 +6,21 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
+// Type definition for features
+type Feature = {
+  type: string;
+  icon: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  fullDescription?: string;
+  audience?: string;
+  accentColor?: string;
+  color?: string;
+};
+
 // Feature data - in a real app, this would come from a database or API
-const allFeatures = {
+const allFeatures: Record<string, Feature> = {
   // Platform Features
   'unified-authentication-system': {
     type: 'platform',
