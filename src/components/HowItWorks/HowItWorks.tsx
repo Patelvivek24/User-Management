@@ -1,58 +1,213 @@
+'use client';
+
+import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import styles from './HowItWorks.module.scss';
 
 export default function HowItWorks() {
   const steps = [
     {
       number: '01',
-      title: 'Sign Up & Setup',
-      description: 'Create your account and connect your existing systems through our secure integration process.',
+      icon: 'mdi:power-plug',
+      title: 'Connect Your Apps',
+      description:
+        'Integrate your web, mobile, and enterprise applications using our SDKs or REST APIs. App backend integration takes minutes with our documentation.',
+      color: '#0EEAFF',
     },
     {
       number: '02',
-      title: 'Configure Your Settings',
-      description: 'Customize user roles, permissions, and workflows to match your organization\'s needs.',
+      icon: 'mdi:account-group',
+      title: 'Import Users & Roles',
+      description:
+        'Migrate existing users or start fresh. Role syncing auto-maps your permission structures across all applications.',
+      color: '#7A3FF0',
     },
     {
       number: '03',
-      title: 'Import & Sync Users',
-      description: 'Import your existing user data and set up automatic synchronization across all platforms.',
+      icon: 'mdi:speedometer',
+      title: 'Manage in One Dashboard',
+      description:
+        'Control authentication, permissions, billing, and analytics from one unified admin panel.',
+      color: '#FF8A2A',
     },
     {
       number: '04',
-      title: 'Start Managing',
-      description: 'Begin managing users efficiently with automated workflows and real-time insights.',
+      icon: 'mdi:sparkles',
+      title: 'AI Automates the Rest',
+      description:
+        'AI handles monitoring, predictions, optimization, and alerts — letting you focus on building.',
+      color: '#0EEAFF',
     },
   ];
 
   return (
-    <section className={styles.section} id="how-it-works">
+    <section id="how-it-works" className={styles.section}>
+      {/* Background */}
+      <div className={styles.background} />
+
+      {/* Floating Orb */}
+      <motion.div
+        className={styles.orb}
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.1, 0.15, 0.1],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>How It Works</h2>
-          <p className={styles.subtitle}>
-            Get started in four simple steps
-          </p>
-        </div>
-        
-        <div className={styles.stepsContainer}>
-          {steps.map((step, index) => (
-            <div key={index} className={styles.stepCard}>
-              <div className={styles.stepNumber}>{step.number}</div>
-              <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-                <p className={styles.stepDescription}>{step.description}</p>
-              </div>
-              {index < steps.length - 1 && (
-                <div className={styles.connector}>
-                  <div className={styles.connectorLine}></div>
-                  <div className={styles.connectorArrow}>↓</div>
-                </div>
-              )}
+        {/* Header */}
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className={styles.badgeWrapper}>
+            <div className={styles.badgeGlow} />
+            <div className={styles.badge}>
+              <Icon icon="mdi:sparkles" width={20} height={20} className={styles.badgeIcon} />
+              <span>Simple Setup</span>
             </div>
-          ))}
+          </div>
+
+          <h2 className={styles.title}>
+            Get Started in{' '}
+            <span className={styles.gradientText}>4 Simple Steps</span>
+          </h2>
+
+          <p className={styles.subtitle}>
+            Identity management setup in minutes. From backend integration to AI
+            automation — transform your auth infrastructure instantly.
+          </p>
+        </motion.div>
+
+        {/* Steps */}
+        <div className={styles.stepsWrapper}>
+          <div className={styles.centerLine} />
+
+          <div className={styles.steps}>
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                className={`${styles.step} ${
+                  index % 2 === 0 ? styles.left : styles.right
+                }`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                {/* Card */}
+                <motion.div
+                  className={styles.card}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className={styles.cardGlow}
+                    style={{ backgroundColor: step.color }}
+                  />
+
+                  <div className={styles.cardInner}>
+                    {/* Step Number Badge */}
+                    <motion.div
+                      className={styles.stepBadge}
+                      style={{
+                        borderColor: step.color,
+                        background: `linear-gradient(135deg, ${step.color}40, ${step.color}20)`,
+                      }}
+                      whileHover={{ scale: 1.1, rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <span style={{ color: step.color }}>{step.number}</span>
+                    </motion.div>
+
+                    {/* Icon */}
+                    <motion.div
+                      className={styles.iconWrapper}
+                      style={{
+                        background: `linear-gradient(135deg, ${step.color}20, transparent)`,
+                      }}
+                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                    >
+                      <Icon icon={step.icon} width={32} height={32} style={{ color: step.color }} />
+                    </motion.div>
+
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepDesc}>{step.description}</p>
+
+                    {/* Decorative corner */}
+                    <motion.div
+                      className={styles.corner}
+                      style={{
+                        background: `linear-gradient(135deg, ${step.color}, transparent)`,
+                      }}
+                      animate={{ scale: [1, 1.3, 1] }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        delay: index * 0.5,
+                      }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Connector Dot */}
+                <motion.div
+                  className={styles.centerDot}
+                  style={{ backgroundColor: step.color }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    className={styles.centerDotPulse}
+                    style={{ backgroundColor: step.color }}
+                    animate={{
+                      scale: [1, 2, 1],
+                      opacity: [0.5, 0, 0.5],
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+          className={styles.ctaWrapper}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <motion.button
+            className={styles.ctaButton}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 0 50px rgba(255, 138, 42, 0.5)',
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              className={styles.ctaButtonAnim}
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <span className={styles.ctaText}>
+              Start Integration in Minutes
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                →
+              </motion.span>
+            </span>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
 }
-
