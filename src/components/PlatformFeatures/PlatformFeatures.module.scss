@@ -92,6 +92,8 @@
 /* Feature Cards */
 .featureCardWrapper {
   position: relative;
+  cursor: pointer;
+  display: block;
 }
 
 .featureGlow {

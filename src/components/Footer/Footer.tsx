@@ -8,9 +8,9 @@ import styles from './Footer.module.scss';
 export default function Footer() {
   const footerLinks = {
     Product: ['Features', 'Pricing', 'Security', 'Roadmap', 'Changelog'],
-    Developers: ['Documentation', 'API Reference', 'SDKs', 'Status', 'GitHub'],
-    Company: ['About', 'Blog', 'Careers', 'Press Kit', 'Partners'],
-    Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR', 'Security'],
+    Developers: ['Documentation', 'API Reference', 'SDKs', 'GitHub'],
+    Company: ['About', 'Blog', 'Careers', 'Press Kit'],
+    Legal: ['GDPR', 'Security'],
   };
 
   const socialLinks = [
@@ -127,7 +127,7 @@ export default function Footer() {
         >
           <div className={styles.bottomContent}>
             <div className={styles.copyright}>
-              <span>© 2025 Super Admin & Auth as a Service. Made with</span>
+              <span>© 2025 Neophoniex - Super Admin & Auth as a Service. Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}

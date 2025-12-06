@@ -3,11 +3,13 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import styles from './KeyBenefits.module.scss';
 
 export default function KeyBenefits() {
   const benefits = [
     {
+      slug: 'launch-products-faster',
       icon: 'mdi:rocket',
       audience: 'Founders & Product Teams',
       title: 'Launch Products 10x Faster',
@@ -22,6 +24,7 @@ export default function KeyBenefits() {
       color: '#FF8A2A',
     },
     {
+      slug: 'build-features-not-boilerplate',
       icon: 'mdi:code-tags',
       audience: 'Developers',
       title: 'Build Features, Not Boilerplate',
@@ -36,6 +39,7 @@ export default function KeyBenefits() {
       color: '#0EEAFF',
     },
     {
+      slug: 'seamless-experience',
       icon: 'mdi:account-group',
       audience: 'End Users',
       title: 'Seamless Experience Across Apps',
@@ -50,6 +54,7 @@ export default function KeyBenefits() {
       color: '#7A3FF0',
     },
     {
+      slug: 'ai-powered-growth',
       icon: 'mdi:trending-up',
       audience: 'Ops & Revenue Teams',
       title: 'AI-Powered Growth',
@@ -107,12 +112,13 @@ export default function KeyBenefits() {
           {benefits.map((benefit, i) => {
             return (
               <Col lg={6} key={i}>
-                <motion.div
-                  className={styles.card}
-                  whileHover={{ y: -12 }}
-                  style={{ '--accent': benefit.color } as React.CSSProperties & { '--accent': string }}
-                >
-                  <div className={styles.cardInner}>
+                <Link href={`/features/${benefit.slug}`} style={{ textDecoration: 'none' }}>
+                  <motion.div
+                    className={styles.card}
+                    whileHover={{ y: -12 }}
+                    style={{ '--accent': benefit.color } as React.CSSProperties & { '--accent': string }}
+                  >
+                    <div className={styles.cardInner}>
                     <div className={styles.cardHeader}>
                       <div className={styles.icon}>
                         <Icon icon={benefit.icon} width={34} height={34} style={{ color: benefit.color }} />
@@ -135,6 +141,7 @@ export default function KeyBenefits() {
                     <Icon icon="mdi:arrow-right" className={styles.arrow} />
                   </div>
                 </motion.div>
+                </Link>
               </Col>
             );
           })}

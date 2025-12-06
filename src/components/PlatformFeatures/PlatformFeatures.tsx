@@ -3,11 +3,13 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { Container, Row, Col } from "react-bootstrap";
+import Link from 'next/link';
 import styles from "./PlatformFeatures.module.scss";
 
 export default function PlatformFeatures() {
   const features = [
     {
+      slug: 'unified-authentication-system',
       icon: 'mdi:lock',
       title: "Unified Authentication System",
       description:
@@ -22,6 +24,7 @@ export default function PlatformFeatures() {
       accentColor: "#0EEAFF",
     },
     {
+      slug: 'super-admin-dashboard',
       icon: 'mdi:speedometer',
       title: "Super Admin Dashboard",
       description:
@@ -36,6 +39,7 @@ export default function PlatformFeatures() {
       accentColor: "#7A3FF0",
     },
     {
+      slug: 'ai-insights-automation',
       icon: 'mdi:brain',
       title: "AI Insights & Automation",
       description:
@@ -50,6 +54,7 @@ export default function PlatformFeatures() {
       accentColor: "#FF8A2A",
     },
     {
+      slug: 'billing-engine',
       icon: 'mdi:credit-card',
       title: "Billing Engine for Apps",
       description:
@@ -64,6 +69,7 @@ export default function PlatformFeatures() {
       accentColor: "#0EEAFF",
     },
     {
+      slug: 'advanced-permissions',
       icon: 'mdi:key',
       title: "Advanced Permissions (RBAC/ABAC)",
       description:
@@ -122,21 +128,22 @@ export default function PlatformFeatures() {
         <Row>
           {features.map((feature, index) => (
             <Col md={6} key={index} className="mb-4">
-              <motion.div
-                className={styles.featureCardWrapper}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8 }}
-                viewport={{ once: true }}
-              >
+              <Link href={`/features/${feature.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
-                  className={styles.featureGlow}
-                  style={{
-                    background: `linear-gradient(135deg, ${feature.accentColor}, transparent)`,
-                  }}
-                />
+                  className={styles.featureCardWrapper}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    className={styles.featureGlow}
+                    style={{
+                      background: `linear-gradient(135deg, ${feature.accentColor}, transparent)`,
+                    }}
+                  />
 
-                <div className={styles.featureCard}>
+                  <div className={styles.featureCard}>
                   <div
                     className={styles.featureAccent}
                     style={{
@@ -188,6 +195,7 @@ export default function PlatformFeatures() {
                   </div>
                 </div>
               </motion.div>
+              </Link>
             </Col>
           ))}
         </Row>
