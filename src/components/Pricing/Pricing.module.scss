@@ -1,196 +1,180 @@
 .section {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+  padding: 8rem 0;
+  background: #0a0f1c;
+  overflow: hidden;
+}
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: linear-gradient(#0eeaff 1px, transparent 1px),
+                    linear-gradient(90deg, #0eeaff 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
+/* Header */
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+
+  h2 {
+    font-size: 2.5rem;
+    color: #e5e7eb;
+    margin-top: 1rem;
+
+    span {
+      background: linear-gradient(90deg, #7a3ff0, #ff8a2a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-top: 1rem;
+  }
 }
 
-.title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #1a202c;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 63, 240, 0.3);
+  color: #7a3ff0;
+  background: rgba(17, 24, 39, 0.7);
   margin-bottom: 1rem;
 }
 
-.subtitle {
-  font-size: 20px;
-  color: #4a5568;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.pricingGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.pricingCard {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+/* Card */
+.card {
   position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(14, 234, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cardInner {
+  padding: 2rem;
+}
+
+.cardHeader {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  &.popular {
-    border: 3px solid #667eea;
-    transform: scale(1.05);
-
-    @media (max-width: 768px) {
-      transform: scale(1);
-    }
+  h3 {
+    color: #e5e7eb;
   }
 }
 
-.popularBadge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
-}
-
-.planHeader {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.planName {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
-}
-
-.planDescription {
-  color: #4a5568;
-  font-size: 15px;
-  margin: 0;
-}
-
-.planPrice {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid #e2e8f0;
+.icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .price {
-  font-size: 48px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2rem;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+
+  span + span {
+    font-size: 1rem;
+    color: #9ca3af;
+    margin-left: 0.5rem;
+  }
 }
 
-.period {
-  font-size: 16px;
-  color: #4a5568;
-  margin-left: 0.25rem;
+.description {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
 }
 
-.featuresList {
+.cta {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 2px solid #0eeaff;
+  background: transparent;
+  color: #0eeaff;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(14, 234, 255, 0.1);
+  }
+}
+
+.ctaHighlighted {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff8a2a, #ff6a0a);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255, 138, 42, 0.3);
+}
+
+.features {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
-  flex: 1;
+  margin-bottom: 1rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+  }
 }
 
-.featureItem {
+.limitations {
+  list-style: none;
+  padding: 1rem 0 0 0;
+  border-top: 1px solid rgba(14, 234, 255, 0.1);
+  color: #9ca3af;
+
+  li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Highlight Badge */
+.highlightBadge {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
-  color: #4a5568;
-  line-height: 1.6;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #ff8a2a, #ff6a0a);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  z-index: 10;
 }
-
-.checkmark {
-  color: #48bb78;
-  font-weight: 700;
-  font-size: 20px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.ctaButton {
-  width: 100%;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.ctaButtonPrimary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-  }
-}
-
-.ctaButtonSecondary {
-  background: #f7fafc;
-  color: #667eea;
-  border: 2px solid #667eea;
-
-  &:hover {
-    background: #667eea;
-    color: white;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .pricingGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .pricingCard {
-    padding: 2rem;
-  }
-}
-
