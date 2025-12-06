@@ -84,3 +84,69 @@ button {
   font-family: inherit;
 }
 
+/* ========================================
+   GLOBAL SECTION STYLES
+======================================== */
+
+/* Section Header Container */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Section Title */
+.section-title {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Section Description */
+.section-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-tertiary);
+}
+
+/* Gradient Text (for spans inside titles) */
+.section-gradient-text {
+  background: var(--gradient-cyan-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+}
+

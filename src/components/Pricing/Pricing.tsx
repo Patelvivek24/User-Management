@@ -95,10 +95,10 @@ export default function Pricing() {
         }}
       />
 
-      <Container className={styles.container}>
+      <Container>
         {/* Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -106,10 +106,10 @@ export default function Pricing() {
           <span className={styles.badge}>
             <Icon icon="mdi:lightning-bolt" width={18} height={18} /> Flexible Pricing
           </span>
-          <h2>
-            Choose Your <span>Perfect Plan</span>
+          <h2 className="section-title">
+            Choose Your <span className="section-gradient-text">Perfect Plan</span>
           </h2>
-          <p>
+          <p className="section-description">
             Scale as you grow. All plans include core authentication features and can be upgraded anytime.
           </p>
         </motion.div>

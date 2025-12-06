@@ -16,23 +16,12 @@
   z-index: 0;
 }
 
-/* ========================================
-   CONTAINER
-======================================== */
-
-.container {
-  position: relative;
-  max-width: 1280px;
-  margin: 0 auto;
-  z-index: 1;
-}
 
 /* ========================================
    HEADER
 ======================================== */
 
 .header {
-  text-align: center;
   margin-bottom: 6rem;
 }
 
@@ -67,32 +56,6 @@
 
 .badgeIcon {
   color: #ff8a2a;
-}
-
-/* ========================================
-   TITLES
-======================================== */
-
-.title {
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 600;
-  color: #e5e7eb;
-}
-
-.gradientText {
-  background: linear-gradient(90deg, #ff8a2a, #7a3ff0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #9ca3af;
 }
 
 /* ========================================

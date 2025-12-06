@@ -28,17 +28,9 @@
   filter: blur(200px);
 }
 
-/* Container */
-.container {
-  position: relative;
-  z-index: 10;
-  max-width: 1280px;
-  margin: auto;
-}
 
 /* Header */
 .header {
-  text-align: center;
   margin-bottom: 5rem;
 }
 
@@ -70,26 +62,6 @@
 
 .badgeIcon {
   color: #FF8A2A;
-}
-
-.title {
-  color: #E5E7EB;
-  font-size: 2.25rem;
-  margin-top: 1.5rem;
-}
-
-.gradientText {
-  background: linear-gradient(90deg, #FF8A2A, #7A3FF0);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.subtitle {
-  color: #9CA3AF;
-  font-size: 1.25rem;
-  max-width: 720px;
-  margin: 1rem auto 0;
-  line-height: 1.7;
 }
 
 /* Grid */
@@ -235,26 +207,6 @@
   margin-bottom: 1rem;
 }
 
-.solutionTitle {
-  font-size: 2rem;
-  color: #E5E7EB;
-  max-width: 800px;
-  margin: auto;
-}
-
-.gradientText2 {
-  background: linear-gradient(90deg, #0EEAFF, #7A3FF0, #FF8A2A);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.solutionDescription {
-  color: #D1D5DB;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 1rem auto 0;
-}
 
 /* Feature Pills */
 .featureRow {

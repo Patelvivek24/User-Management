@@ -123,7 +123,7 @@ export default function ContactPage() {
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        <Container className={styles.container}>
+        <Container style={{ position: 'relative', zIndex: 2 }}>
           {/* Header */}
           <motion.div
             className={styles.header}

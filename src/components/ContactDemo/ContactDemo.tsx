@@ -35,7 +35,7 @@ export default function ContactDemo() {
         }}
       />
 
-      <Container className={styles.container}>
+      <Container>
         {/* Main CTA Card */}
         <motion.div
           className={styles.ctaCardWrapper}

@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
@@ -254,7 +255,7 @@ export default function FeatureDetailPage() {
 
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.container}>
+        <Container>
           <motion.div
             className={styles.heroContent}
             initial={{ opacity: 0, y: 30 }}
@@ -286,12 +287,12 @@ export default function FeatureDetailPage() {
             <h1 className={styles.title}>{feature.title}</h1>
             <p className={styles.subtitle}>{feature.description}</p>
           </motion.div>
-        </div>
+        </Container>
       </section>
 
       {/* Content Section */}
       <section className={styles.content}>
-        <div className={styles.container}>
+        <Container>
           <div className={styles.contentGrid}>
             {/* Main Content */}
             <div className={styles.mainContent}>
@@ -339,7 +340,7 @@ export default function FeatureDetailPage() {
               </motion.div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

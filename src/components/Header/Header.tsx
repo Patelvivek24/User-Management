@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
+import { Container } from "react-bootstrap";
 import styles from "./Header.module.scss";
 
 export default function Header() {
@@ -23,7 +24,7 @@ export default function Header() {
       animate={{ y: 0 }}
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
     >
-      <div className={styles.container}>
+      <Container>
         <div className={styles.row}>
           {/* Logo */}
           <motion.div
@@ -121,7 +122,7 @@ export default function Header() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </Container>
     </motion.nav>
   );
 }

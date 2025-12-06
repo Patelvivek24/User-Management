@@ -41,7 +41,7 @@ export default function Footer() {
         }}
       />
 
-      <Container className={styles.container}>
+      <Container>
         <Row className={styles.mainRow}>
           {/* Brand Column */}
           <Col lg={4} md={6} className={styles.brandCol}>

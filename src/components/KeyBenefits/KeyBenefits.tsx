@@ -84,10 +84,10 @@ export default function KeyBenefits() {
         transition={{ duration: 12, repeat: Infinity }}
       />
 
-      <Container className={styles.container}>
+      <Container>
         {/* Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,11 +97,11 @@ export default function KeyBenefits() {
             Key Benefits
           </span>
 
-          <h2>
-            Built for <span>Every Stakeholder</span>
+          <h2 className="section-title">
+            Built for <span className="section-gradient-text">Every Stakeholder</span>
           </h2>
 
-          <p>
+          <p className="section-description">
             From demo to full production, our identity platform powers teams across
             the organization.
           </p>

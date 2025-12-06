@@ -92,7 +92,7 @@ export default function PlatformFeatures() {
       <Container>
         {/* Section Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -112,12 +112,12 @@ export default function PlatformFeatures() {
             </div>
           </div>
 
-          <h2 className={styles.title}>
+          <h2 className="section-title">
             Everything You Need,{" "}
-            <span className={styles.gradientText}>Unified & Intelligent</span>
+            <span className="section-gradient-text">Unified & Intelligent</span>
           </h2>
 
-          <p className={styles.subtitle}>
+          <p className="section-description">
             A complete authentication for mobile apps, identity management setup,
             and admin platform for developers. Built for scale, security, and
             AI-powered intelligence.

@@ -2,6 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
 import styles from './ProblemWeSolve.module.scss';
 
 export default function ProblemWeSolve() {
@@ -69,10 +70,10 @@ export default function ProblemWeSolve() {
         />
       </div>
 
-      <div className={styles.container}>
+      <Container style={{ position: 'relative', zIndex: 10 }}>
         {/* Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -88,11 +89,11 @@ export default function ProblemWeSolve() {
             </div>
           </div>
 
-          <h2 className={styles.title}>
-            Stop Wasting Months <span className={styles.gradientText}>Rebuilding Infrastructure</span>
+          <h2 className="section-title">
+            Stop Wasting Months <span className="section-gradient-text">Rebuilding Infrastructure</span>
           </h2>
 
-          <p className={styles.subtitle}>
+          <p className="section-description">
             Every new mobile app, web platform, or SaaS product forces teams to rebuild the same auth,
             user management, and billing systems—wasting months and creating security risks.
           </p>
@@ -163,11 +164,11 @@ export default function ProblemWeSolve() {
                 <span>The Solution</span>
               </div>
 
-              <h3 className={styles.solutionTitle}>
-                Introducing the <span className={styles.gradientText2}>Centralized AI-Powered Solution</span>
+              <h3 className="section-title">
+                Introducing the <span className="section-gradient-text">Centralized AI-Powered Solution</span>
               </h3>
 
-              <p className={styles.solutionDescription}>
+              <p className="section-description">
                 A unified identity platform for web apps, mobile apps, and enterprise software—
                 bringing authentication, access control, org management, and billing together with AI automation.
               </p>
@@ -182,7 +183,7 @@ export default function ProblemWeSolve() {
             </div>
           </div>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }

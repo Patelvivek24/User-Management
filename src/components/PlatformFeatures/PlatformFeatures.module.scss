@@ -27,7 +27,6 @@
 
 /* Header */
 .header {
-  text-align: center;
   margin-bottom: 90px;
 }
 
@@ -64,29 +63,6 @@
   .badgeIcon {
     color: #0eeaff;
   }
-}
-
-.title {
-  margin-top: 24px;
-  font-size: 40px;
-  font-weight: 700;
-  color: #e5e7eb;
-}
-
-.gradientText {
-  background: linear-gradient(to right, #0eeaff, #7a3ff0);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.subtitle {
-  margin-top: 16px;
-  font-size: 20px;
-  color: #9ca3af;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
 }
 
 /* Feature Cards */

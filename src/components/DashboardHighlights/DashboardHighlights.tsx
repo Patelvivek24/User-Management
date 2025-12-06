@@ -2,6 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
 import styles from './DashboardHighlights.module.scss';
 
 export default function DashboardHighlights() {
@@ -61,10 +62,10 @@ export default function DashboardHighlights() {
       {/* Background */}
       <div className={styles.background} />
 
-      <div className={styles.container}>
+      <Container style={{ position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -85,13 +86,13 @@ export default function DashboardHighlights() {
             </div>
           </div>
 
-          <h2 className={styles.title}>
+          <h2 className="section-title">
             Unified{' '}
-            <span className={styles.gradientText}>Admin Platform</span>{' '}
+            <span className="section-gradient-text">Admin Platform</span>{' '}
             for Developers
           </h2>
 
-          <p className={styles.subtitle}>
+          <p className="section-description">
             A comprehensive admin platform for developers with powerful
             permission management UI, analytics, and real-time insights across
             all your applications.
@@ -210,7 +211,7 @@ export default function DashboardHighlights() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import { Container } from 'react-bootstrap';
 import styles from './HowItWorks.module.scss';
 
 export default function HowItWorks() {
@@ -55,10 +56,10 @@ export default function HowItWorks() {
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      <div className={styles.container}>
+      <Container style={{ position: 'relative', zIndex: 2 }}>
         {/* Header */}
         <motion.div
-          className={styles.header}
+          className={`section-header ${styles.header}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -71,12 +72,12 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <h2 className={styles.title}>
+          <h2 className="section-title">
             Get Started in{' '}
-            <span className={styles.gradientText}>4 Simple Steps</span>
+            <span className="section-gradient-text">4 Simple Steps</span>
           </h2>
 
-          <p className={styles.subtitle}>
+          <p className="section-description">
             Identity management setup in minutes. From backend integration to AI
             automation — transform your auth infrastructure instantly.
           </p>
@@ -207,7 +208,7 @@ export default function HowItWorks() {
             </span>
           </motion.button>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }
