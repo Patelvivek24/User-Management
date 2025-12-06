@@ -3,14 +3,20 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
   const footerLinks = {
     Product: ['Features', 'Pricing', 'Security', 'Roadmap', 'Changelog'],
     Developers: ['Documentation', 'API Reference', 'SDKs', 'GitHub'],
-    Company: ['About', 'Blog', 'Careers', 'Press Kit'],
+    Company: ['About', 'Blog', 'Careers', 'Press Kit', 'Contact'],
     Legal: ['GDPR', 'Security'],
+  };
+
+  const getLinkHref = (link: string) => {
+    if (link === 'Contact') return '/contact';
+    return '#';
   };
 
   const socialLinks = [
@@ -106,10 +112,10 @@ export default function Footer() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 + linkIndex * 0.05 }}
                   >
-                    <motion.a href="#" className={styles.linkItem} whileHover={{ x: 5 }}>
-                      <span className={styles.dot} />
+                    <Link href={getLinkHref(link)} className={styles.linkItem}>
+                      <motion.span className={styles.dot} whileHover={{ x: 5 }} />
                       {link}
-                    </motion.a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
