@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
@@ -293,9 +293,9 @@ export default function FeatureDetailPage() {
       {/* Content Section */}
       <section className={styles.content}>
         <Container>
-          <div className={styles.contentGrid}>
+          <Row className="g-4">
             {/* Main Content */}
-            <div className={styles.mainContent}>
+            <Col lg={8} className={styles.mainContent}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -308,10 +308,10 @@ export default function FeatureDetailPage() {
                   ))}
                 </div>
               </motion.div>
-            </div>
+            </Col>
 
             {/* Sidebar */}
-            <div className={styles.sidebar}>
+            <Col lg={4} className={styles.sidebar}>
               <motion.div
                 className={styles.highlightsCard}
                 initial={{ opacity: 0, x: 20 }}
@@ -338,8 +338,8 @@ export default function FeatureDetailPage() {
                   ))}
                 </ul>
               </motion.div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Container>
       </section>
     </div>

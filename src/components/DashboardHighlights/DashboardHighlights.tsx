@@ -2,7 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import styles from './DashboardHighlights.module.scss';
 
 export default function DashboardHighlights() {
@@ -152,17 +152,17 @@ export default function DashboardHighlights() {
         </motion.div>
 
         {/* Highlights Grid */}
-        <div className={styles.grid}>
+        <Row className="g-4">
           {highlights.map((item, index) => (
-            <motion.div
-              key={index}
-              className={styles.cardWrapper}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-            >
+            <Col key={index} sm={6} lg={4}>
+              <motion.div
+                className={styles.cardWrapper}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+              >
               <div
                 className={styles.cardGlow}
                 style={{ backgroundColor: item.color }}
@@ -209,8 +209,9 @@ export default function DashboardHighlights() {
                 />
               </div>
             </motion.div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </Container>
     </section>
   );

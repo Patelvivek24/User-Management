@@ -2,7 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import styles from './ProblemWeSolve.module.scss';
 
 export default function ProblemWeSolve() {
@@ -101,19 +101,19 @@ export default function ProblemWeSolve() {
 
         {/* Grid */}
         <motion.div
-          className={styles.grid}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {problems.map((p, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className={styles.cardWrapper}
-            >
+          <Row className="g-4" style={{ marginBottom: '5rem' }}>
+            {problems.map((p, idx) => (
+              <Col key={idx} md={6} lg={4}>
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={styles.cardWrapper}
+                >
               <div className={`${styles.cardGlow} ${styles[p.gradient]}`} />
 
               <div className={styles.card}>
@@ -137,7 +137,9 @@ export default function ProblemWeSolve() {
                 </motion.div>
               </div>
             </motion.div>
-          ))}
+              </Col>
+            ))}
+          </Row>
         </motion.div>
 
         {/* Solution Section */}

@@ -64,20 +64,6 @@
   color: #FF8A2A;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /* Card */
 .cardWrapper {

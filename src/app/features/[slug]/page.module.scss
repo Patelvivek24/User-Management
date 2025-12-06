@@ -76,13 +76,6 @@
   padding: 4rem 1.5rem;
 }
 
-.contentGrid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 .mainContent {
   h2 {
@@ -181,10 +174,6 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
-  }
-
   .sidebar {
     position: static;
   }
