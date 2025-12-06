@@ -1,69 +1,216 @@
+'use client';
+
+import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import styles from './DashboardHighlights.module.scss';
 
 export default function DashboardHighlights() {
   const highlights = [
     {
-      metric: '10,000+',
-      label: 'Active Users',
-      description: 'Manage thousands of users seamlessly',
+      icon: 'mdi:view-grid',
+      title: 'Multi-App Overview',
+      description:
+        'Unified product dashboard showing all connected applications, user metrics, and system health',
+      stats: '10+ Apps',
+      color: '#0EEAFF',
     },
     {
-      metric: '99.9%',
-      label: 'Uptime',
-      description: 'Reliable service you can count on',
+      icon: 'mdi:source-branch',
+      title: 'Permissions Visualizer',
+      description:
+        'Interactive permission management UI with role hierarchy and access mapping',
+      stats: '500+ Roles',
+      color: '#7A3FF0',
     },
     {
-      metric: '50+',
-      label: 'Integrations',
-      description: 'Connect with your favorite tools',
+      icon: 'mdi:pulse',
+      title: 'Activity Heatmaps',
+      description:
+        'Real-time usage patterns and engagement analytics across all platforms',
+      stats: 'Live Data',
+      color: '#FF8A2A',
     },
     {
-      metric: '24/7',
-      label: 'Support',
-      description: 'Expert help whenever you need it',
+      icon: 'mdi:brain',
+      title: 'AI Insights',
+      description:
+        'Predictive analytics, anomaly detection, and intelligent recommendations',
+      stats: '24/7 Active',
+      color: '#0EEAFF',
+    },
+    {
+      icon: 'mdi:currency-usd',
+      title: 'Billing Analytics',
+      description:
+        'Revenue tracking, subscription metrics, and payment intelligence',
+      stats: '$2M+ Processed',
+      color: '#7A3FF0',
+    },
+    {
+      icon: 'mdi:shield',
+      title: 'Audit Logs',
+      description:
+        'Complete activity trail with filtering, search, and compliance reporting',
+      stats: '100% Coverage',
+      color: '#FF8A2A',
     },
   ];
 
   return (
     <section className={styles.section}>
+      {/* Background */}
+      <div className={styles.background} />
+
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Dashboard Highlights</h2>
-          <p className={styles.subtitle}>
-            Powerful insights at your fingertips
-          </p>
-        </div>
-        
-        <div className={styles.dashboardPreview}>
-          <div className={styles.dashboardMockup}>
-            <div className={styles.dashboardHeader}>
-              <div className={styles.dashboardHeaderItem}></div>
-              <div className={styles.dashboardHeaderItem}></div>
-              <div className={styles.dashboardHeaderItem}></div>
+        {/* Header */}
+        <motion.div
+          className={styles.header}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className={styles.badgeWrapper}>
+            <motion.div
+              className={styles.badgeGlow}
+              animate={{ rotate: [0, 360] }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            />
+            <div className={styles.badge}>
+              <Icon icon="mdi:view-grid" width={20} height={20} className={styles.badgeIcon} />
+              <span>Dashboard Preview</span>
             </div>
-            <div className={styles.dashboardContent}>
-              <div className={styles.dashboardSidebar}></div>
-              <div className={styles.dashboardMain}>
-                <div className={styles.dashboardCard}></div>
-                <div className={styles.dashboardCard}></div>
-                <div className={styles.dashboardCard}></div>
-                <div className={styles.dashboardCard}></div>
+          </div>
+
+          <h2 className={styles.title}>
+            Unified{' '}
+            <span className={styles.gradientText}>Admin Platform</span>{' '}
+            for Developers
+          </h2>
+
+          <p className={styles.subtitle}>
+            A comprehensive admin platform for developers with powerful
+            permission management UI, analytics, and real-time insights across
+            all your applications.
+          </p>
+        </motion.div>
+
+        {/* Dashboard Mockup */}
+        <motion.div
+          className={styles.mockupWrapper}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className={styles.mockupGlow} />
+
+          <div className={styles.mockupCard}>
+            {/* Browser Header */}
+            <div className={styles.browserBar}>
+              <span className={`${styles.dot} ${styles.orange}`} />
+              <span className={`${styles.dot} ${styles.cyan}`} />
+              <span className={`${styles.dot} ${styles.purple}`} />
+              <div className={styles.addressBar}>
+                dashboard.superadmin.io
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                alt="Dashboard preview"
+              />
+              <div className={styles.overlay} />
+
+              {/* Floating Stats */}
+              <div className={styles.stats}>
+                {[
+                  { label: 'Users', value: '50M', color: '#0EEAFF' },
+                  { label: 'Apps', value: '10K', color: '#7A3FF0' },
+                  { label: 'Uptime', value: '99.99%', color: '#FF8A2A' },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    className={styles.statCard}
+                    style={{ borderColor: `${stat.color}30` }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                  >
+                    <div style={{ color: stat.color }} className={styles.statValue}>
+                      {stat.value}
+                    </div>
+                    <div className={styles.statLabel}>{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={styles.metricsGrid}>
-          {highlights.map((highlight, index) => (
-            <div key={index} className={styles.metricCard}>
-              <div className={styles.metric}>{highlight.metric}</div>
-              <div className={styles.metricLabel}>{highlight.label}</div>
-              <div className={styles.metricDescription}>{highlight.description}</div>
-            </div>
+        {/* Highlights Grid */}
+        <div className={styles.grid}>
+          {highlights.map((item, index) => (
+            <motion.div
+              key={index}
+              className={styles.cardWrapper}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+            >
+              <div
+                className={styles.cardGlow}
+                style={{ backgroundColor: item.color }}
+              />
+
+              <div className={styles.card}>
+                <div className={styles.cardTop}>
+                  <motion.div
+                    className={styles.icon}
+                    style={{
+                      background: `linear-gradient(135deg, ${item.color}20, transparent)`,
+                    }}
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                  >
+                    <Icon icon={item.icon} width={28} height={28} style={{ color: item.color }} />
+                  </motion.div>
+
+                  <div
+                    className={styles.statsBadge}
+                    style={{
+                      borderColor: `${item.color}30`,
+                      background: `${item.color}10`,
+                      color: item.color,
+                    }}
+                  >
+                    {item.stats}
+                  </div>
+                </div>
+
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+
+                <motion.div
+                  className={styles.corner}
+                  style={{
+                    background: `linear-gradient(135deg, transparent, ${item.color})`,
+                  }}
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.2,
+                  }}
+                />
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 }
-
