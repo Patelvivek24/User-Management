@@ -1,62 +1,173 @@
+'use client';
+
+import { Container, Row, Col } from 'react-bootstrap';
+import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
+  const footerLinks = {
+    Product: ['Features', 'Pricing', 'Security', 'Roadmap', 'Changelog'],
+    Developers: ['Documentation', 'API Reference', 'SDKs', 'Status', 'GitHub'],
+    Company: ['About', 'Blog', 'Careers', 'Press Kit', 'Partners'],
+    Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR', 'Security'],
+  };
+
+  const socialLinks = [
+    { icon: 'mdi:twitter', href: '#', label: 'Twitter', color: '#0EEAFF' },
+    { icon: 'mdi:github', href: '#', label: 'GitHub', color: '#7A3FF0' },
+    { icon: 'mdi:linkedin', href: '#', label: 'LinkedIn', color: '#FF8A2A' },
+    { icon: 'mdi:email', href: '#', label: 'Email', color: '#0EEAFF' },
+  ];
+
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerSection}>
-            <h3 className={styles.footerTitle}>UserManagement</h3>
-            <p className={styles.footerDescription}>
-              The complete solution for managing users across all your platforms.
+      {/* Gradient Orb */}
+      <motion.div
+        className={styles.gradientOrb}
+        animate={{
+          opacity: [0.05, 0.1, 0.05],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+        }}
+      />
+
+      <Container className={styles.container}>
+        <Row className={styles.mainRow}>
+          {/* Brand Column */}
+          <Col lg={4} md={6} className={styles.brandCol}>
+            <motion.div
+              className={styles.brandLogo}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className={styles.logoWrapper}>
+                <div className={styles.logoGlow} />
+                <div className={styles.logoBox}>
+                  <div className={styles.logoInner} />
+                </div>
+              </div>
+              <div>
+                <div className={styles.brandName}>Super Admin</div>
+                <div className={styles.brandTagline}>Auth as a Service</div>
+              </div>
+            </motion.div>
+
+            <p className={styles.brandDesc}>
+              The unified AI-powered control plane for authentication, roles, permissions, billing, and multi-application management.
             </p>
+
             <div className={styles.socialLinks}>
-              <a href="#" aria-label="Facebook">📘</a>
-              <a href="#" aria-label="Twitter">🐦</a>
-              <a href="#" aria-label="LinkedIn">💼</a>
-              <a href="#" aria-label="GitHub">💻</a>
+              {socialLinks.map((social, index) => {
+                return (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    className={styles.socialItem}
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    aria-label={social.label}
+                  >
+                    <motion.div
+                      className={styles.socialGlow}
+                      style={{ background: `linear-gradient(135deg, ${social.color}20, transparent)` }}
+                    />
+                    <Icon icon={social.icon} className={styles.socialIcon} width={20} height={20} />
+                  </motion.a>
+                );
+              })}
+            </div>
+          </Col>
+
+          {/* Links Columns */}
+          {Object.entries(footerLinks).map(([category, links], index) => (
+            <Col key={category} lg={2} md={6} sm={6} className={styles.linkCol}>
+              <motion.h4
+                className={styles.linkCategory}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {category}
+              </motion.h4>
+              <ul className={styles.linkList}>
+                {links.map((link, linkIndex) => (
+                  <motion.li
+                    key={link}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 + linkIndex * 0.05 }}
+                  >
+                    <motion.a href="#" className={styles.linkItem} whileHover={{ x: 5 }}>
+                      <span className={styles.dot} />
+                      {link}
+                    </motion.a>
+                  </motion.li>
+                ))}
+              </ul>
+            </Col>
+          ))}
+        </Row>
+
+        {/* Bottom Bar */}
+        <motion.div
+          className={styles.bottomBar}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className={styles.bottomContent}>
+            <div className={styles.copyright}>
+              <span>© 2025 Super Admin & Auth as a Service. Made with</span>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+              >
+                <Icon icon="mdi:heart" width={16} height={16} className={styles.heart} />
+              </motion.div>
+            </div>
+
+            <div className={styles.bottomLinks}>
+              {['Privacy', 'Terms', 'Cookies'].map((link, index) => (
+                <motion.a
+                  key={link}
+                  href="#"
+                  className={styles.bottomLink}
+                  whileHover={{ y: -2 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  {link}
+                  <span className={styles.underline} />
+                </motion.a>
+              ))}
             </div>
           </div>
-          
-          <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Product</h4>
-            <ul className={styles.footerLinks}>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
-              <li><a href="#contact">Demo</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Company</h4>
-            <ul className={styles.footerLinks}>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Resources</h4>
-            <ul className={styles.footerLinks}>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">API Reference</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className={styles.footerBottom}>
-          <p className={styles.copyright}>
-            © {new Date().getFullYear()} UserManagement. All rights reserved.
-          </p>
-        </div>
-      </div>
+        </motion.div>
+
+        {/* Decorative Bottom Orbs */}
+        <motion.div
+          className={styles.bottomOrbLeft}
+          animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className={styles.bottomOrbRight}
+          animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 8, repeat: Infinity, delay: 2 }}
+        />
+      </Container>
     </footer>
   );
 }
-

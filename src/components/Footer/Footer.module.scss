@@ -1,127 +1,328 @@
 .footer {
-  background: #1a202c;
-  color: white;
-  padding: 4rem 0 2rem;
+  position: relative;
+  padding: 5rem 2rem;
+  border-top: 1px solid rgba(14, 234, 255, 0.1);
+  background-color: #0A0F1C;
+  overflow: hidden;
+}
+
+.gradientOrb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(150px);
+  transform: translateX(-50%);
+  background-color: #7A3FF0;
+  z-index: 0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-.footerContent {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
+.mainRow {
   margin-bottom: 3rem;
 }
 
-.footerSection {
-  h3, h4 {
-    margin: 0 0 1rem 0;
-  }
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.footerTitle {
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+}
+
+.logoGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #FF8A2A, #7A3FF0);
+  border-radius: 0.5rem;
+  filter: blur(12px);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.logoBox {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #FF8A2A, #7A3FF0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoInner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 0.25rem;
+}
+
+.brandName {
+  color: #E5E7EB;
+  font-weight: 600;
   font-size: 24px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
 }
 
-.footerDescription {
-  color: #a0aec0;
+.brandTagline {
+  font-size: 12px;
+  color: #0EEAFF;
+}
+
+.brandDesc {
+  color: #9CA3AF;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  max-width: 400px;
+  font-size: 15px;
 }
 
 .socialLinks {
   display: flex;
   gap: 1rem;
+}
 
-  a {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    transition: all 0.3s ease;
+.socialItem {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(14,234,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    &:hover {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transform: translateY(-3px);
-    }
+.socialGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.socialItem:hover .socialGlow {
+  opacity: 1;
+}
+
+.socialIcon {
+  position: relative;
+  z-index: 1;
+  color: #0EEAFF;
+  transition: color 0.3s;
+}
+
+.linkCol {
+  margin-bottom: 2rem;
+  
+  @media (min-width: 992px) {
+    margin-bottom: 0;
   }
 }
 
-.sectionTitle {
+.linkCategory {
+  color: #E5E7EB;
+  margin-bottom: 24px;
+  position: relative;
   font-size: 18px;
   font-weight: 600;
-  color: white;
-  margin-bottom: 1rem;
 }
 
-.footerLinks {
+.linkList {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-
-  li {
-    a {
-      color: #a0aec0;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 15px;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
+  gap: 12px;
 }
 
-.footerBottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.linkList li {
+  margin: 0;
+  padding: 0;
+}
+
+.linkItem {
+  color: #9CA3AF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+  font-size: 15px;
+}
+
+.linkItem:hover {
+  color: #0EEAFF;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: #0EEAFF;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  flex-shrink: 0;
+}
+
+.linkItem:hover .dot {
+  opacity: 1;
+}
+
+.bottomBar {
   padding-top: 2rem;
-  text-align: center;
+  border-top: 1px solid rgba(14, 234, 255, 0.1);
+}
+
+.bottomContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media(min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .copyright {
-  color: #a0aec0;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9CA3AF;
+  font-size: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heart {
+  color: #FF8A2A;
+  fill: #FF8A2A;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottomLink {
+  position: relative;
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: all 0.3s;
   font-size: 14px;
 }
 
-@media (max-width: 968px) {
-  .footerContent {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.bottomLink:hover {
+  color: #0EEAFF;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #0EEAFF;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.bottomLink:hover .underline {
+  transform: scaleX(1);
+}
+
+/* Decorative Bottom Orbs */
+.bottomOrbLeft,
+.bottomOrbRight {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(80px);
+}
+
+.bottomOrbLeft {
+  left: 0;
+  background-color: #0EEAFF;
+}
+
+.bottomOrbRight {
+  right: 0;
+  background-color: #FF8A2A;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .footer {
+    padding: 4rem 1.5rem;
+  }
+
+  .brandCol {
+    margin-bottom: 3rem;
+  }
+
+  .linkCol {
+    margin-bottom: 2.5rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer {
-    padding: 3rem 0 1.5rem;
+    padding: 3rem 1rem;
   }
 
-  .footerContent {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .brandName {
+    font-size: 20px;
+  }
+
+  .linkCategory {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .linkItem {
+    font-size: 14px;
+  }
+
+  .bottomContent {
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 13px;
+  }
+
+  .bottomLinks {
+    gap: 1.5rem;
   }
 
   .socialLinks {
-    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
-
