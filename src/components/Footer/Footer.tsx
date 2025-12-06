@@ -16,6 +16,8 @@ export default function Footer() {
 
   const getLinkHref = (link: string) => {
     if (link === 'Contact') return '/contact';
+    if (link === 'About') return '/about';
+    if (link === 'Blog') return '/blog';
     return '#';
   };
 

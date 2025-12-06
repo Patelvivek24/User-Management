@@ -1,0 +1,281 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: 128px 24px;
+  background: linear-gradient(to bottom, #0A0F1C, #111827, #0A0F1C);
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #111827, #0a0f1c, #111827);
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #7a3ff0;
+  filter: blur(150px);
+  z-index: 0;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.badgeWrapper {
+  display: inline-flex;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.badgeGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7a3ff0, #0eeaff);
+  filter: blur(18px);
+  opacity: 0.5;
+}
+
+.badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #7a3ff0;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(122, 63, 240, 0.3);
+}
+
+.badgeIcon {
+  color: #7a3ff0;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #0eeaff, #7a3ff0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+/* Mission Card */
+.missionCard {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.missionGlow {
+  position: absolute;
+  inset: -1rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0eeaff, #7a3ff0);
+  filter: blur(40px);
+  opacity: 0.2;
+}
+
+.missionContent {
+  position: relative;
+  padding: 3rem;
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 234, 255, 0.2);
+  border-radius: 24px;
+}
+
+.missionTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.missionText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
+/* Section Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #9ca3af;
+}
+
+/* Value Card */
+.valueCard {
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 234, 255, 0.1);
+  transition: border-color 0.3s ease;
+  height: 100%;
+}
+
+.valueCard:hover {
+  border-color: rgba(14, 234, 255, 0.3);
+}
+
+.valueIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.valueTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.valueDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
+/* Team Card */
+.teamCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.teamGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.teamCard:hover .teamGlow {
+  opacity: 0.2;
+}
+
+.teamContent {
+  position: relative;
+  padding: 2rem;
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(14, 234, 255, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.teamCard:hover .teamContent {
+  border-color: rgba(14, 234, 255, 0.3);
+}
+
+.teamAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.teamName {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+
+.teamRole {
+  font-size: 16px;
+  color: #0eeaff;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.teamDescription {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 96px 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .missionContent {
+    padding: 2rem;
+  }
+
+  .missionTitle {
+    font-size: 28px;
+  }
+
+  .missionText {
+    font-size: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+}
