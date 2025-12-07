@@ -124,7 +124,7 @@ export default function DashboardHighlights() {
               <img
                 src="/Dashboard-preview-image.jpg"
                 alt="SuperAdmin Dashboard Preview"
-                width={1200}
+                width={1013}
                 height={675}
               />
               <div className={styles.overlay} />

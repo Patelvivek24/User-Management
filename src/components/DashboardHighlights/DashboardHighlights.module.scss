@@ -16,7 +16,6 @@
   z-index: 0;
 }
 
-
 /* ========================================
    HEADER
 ======================================== */
@@ -144,8 +143,11 @@
 
 .imageWrapper img {
   width: 100%;
+  height: auto;
   display: block;
   opacity: 0.7;
+  aspect-ratio: 4810 / 3207;
+  object-fit: cover;
 }
 
 .overlay {
