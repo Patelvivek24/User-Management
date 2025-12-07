@@ -122,8 +122,10 @@ export default function DashboardHighlights() {
             {/* Image */}
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-                alt="Dashboard preview"
+                src="/Dashboard-preview-image.jpg"
+                alt="SuperAdmin Dashboard Preview"
+                width={1200}
+                height={675}
               />
               <div className={styles.overlay} />
 
